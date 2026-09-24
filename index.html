@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111b19" />
+    <title>蟑螂出没！｜点击射击小游戏</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">✳</span> VIBE ARCADE <span class="edition">/ 001</span></div>
+        <button class="sound-button" id="soundButton" type="button" aria-label="开启声音" aria-pressed="false">♪ 声音：关</button>
+      </header>
+
+      <section class="intro" aria-labelledby="gameTitle">
+        <div class="eyebrow"><span class="live-dot"></span> 一分钟街机挑战</div>
+        <h1 id="gameTitle">蟑螂<span>出没！</span></h1>
+        <p>它们正在厨房里乱窜。瞄准、点击，看看你能消灭多少只！</p>
+      </section>
+
+      <section class="game-shell" aria-label="射击蟑螂游戏">
+        <div class="scoreboard">
+          <div class="stat"><span class="stat-label">得分 SCORE</span><strong id="score">000</strong></div>
+          <div class="stat"><span class="stat-label">剩余时间 TIME</span><strong id="time">60<span class="unit">s</span></strong></div>
+          <div class="stat lives-stat"><span class="stat-label">生命 LIVES</span><strong id="lives" aria-label="3 条生命">♥ ♥ ♥</strong></div>
+        </div>
+
+        <div class="arena" id="arena" aria-label="游戏区域">
+          <div class="arena-grid" aria-hidden="true"></div>
+          <div class="arena-decor decor-one" aria-hidden="true">✦</div>
+          <div class="arena-decor decor-two" aria-hidden="true">✳</div>
+          <div class="arena-label" aria-hidden="true">KITCHEN ZONE // 01</div>
+          <div id="roaches" class="roaches"></div>
+          <div id="effects" class="effects" aria-hidden="true"></div>
+
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <div class="overlay-icon" id="overlayIcon">◎</div>
+              <span class="overlay-kicker" id="overlayKicker">READY, AIM, CLICK!</span>
+              <h2 id="overlayTitle">准备好开火了吗？</h2>
+              <p id="overlayMessage">60 秒内点击出现的蟑螂。漏掉 3 只，游戏就结束！</p>
+              <button class="primary-button" id="startButton" type="button">开始游戏 <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-footer">
+          <div class="tip"><span class="tip-icon">↗</span> 鼠标点击或手指轻触蟑螂即可射击</div>
+          <div class="footer-actions"><button id="pauseButton" type="button" disabled>暂停</button><button id="restartButton" type="button" disabled>重新开始</button></div>
+        </div>
+      </section>
+
+      <p class="footnote">第一件 Vibe Coding 作品 · 原生 HTML / CSS / JavaScript</p>
+    </main>
+  </body>
+</html>
